@@ -24,8 +24,11 @@
 - To install packages from BioConductor, `RPkg.add("pkgname", :bioc)`
   - For eg., if you want to install `Rgraphviz`, then `RPkg.add("Rgraphviz", :bioc)`
 
-After installing a packaging, you can use the `@rlibrary` macro from `RCall` to load the package into your Julia session. ()
+After installing a packaging, you can use the `@rlibrary` macro from `RCall` to load the package into your Julia session.
 E.g.
 ```julia
 julia> @rlibrary Rgraphviz
 ```
+
+### Know issues:
+- `RPkg.status()` is flaky 
