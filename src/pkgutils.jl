@@ -26,6 +26,10 @@ function add(pkg, remote::Symbol)
         R"""
         devtools::install_github($pkg)
         """
+    elseif remote == :bioc
+        R"""
+        BiocManager::install($pkg)
+        """
     else
         @error "Invalid host keyword"
     end
