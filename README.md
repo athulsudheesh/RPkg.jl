@@ -1,7 +1,7 @@
 # RPkg.jl
 **An R Package Manager from Julia with ❤️**
 
-`RPkg.jl` is a meta package built on top of `RCall.jl`. Even though `RCall.jl` functions try as much as they can, to blur the lines between R syntax and Julia syntax in a Julia session, R package management is an area where the user is forced to write R scripts. Through `RPKg.jl` we are introducing Julia `Pkg` style syntax for managing your R-packages while using `RCall`. We also export all the functionalities from `RCall.jl`, so you don't have to load `RCall` if you are loading `RPkg.jl`
+`RPkg.jl` is a meta package built on top of `RCall.jl`. Even though `RCall.jl` functions try as much as they can, to blur the lines between R syntax and Julia syntax in a Julia session, R package management is an area where the user is forced to write R scripts. Through `RPKg.jl` we are introducing Julia `Pkg` style syntax for managing your R-packages while using `RCall`. 
 
 ### APIs 
 
@@ -27,6 +27,7 @@
 After installing a packaging, you can use the `@rlibrary` macro from `RCall` to load the package into your Julia session.
 E.g.
 ```julia
+using RCall
 julia> @rlibrary Rgraphviz
 ```
 

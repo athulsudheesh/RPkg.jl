@@ -1,6 +1,5 @@
 module RPkg
-    using Reexport
-    @reexport using RCall
+    using RCall
     R"""
     options(repos=c(CRAN="https://cran.microsoft.com/"))
     """
