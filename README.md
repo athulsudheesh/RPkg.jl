@@ -20,6 +20,12 @@
 - To install packages from CRAN, `RPkg.add("pkgname")`
   - If you want to install multiple packages, `RPkg.add("Pkg1", "Pkg2", "Pkg3")`
 - To install packages from GitHub URL, `RPkg.add("githubuserid/reponame", :github)`
-  - Suppose I want to install the package at [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then `RPkg.add("ralmond/CPTtools", :github)`.
+  - For rg., if you want to install the package from [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then `RPkg.add("ralmond/CPTtools", :github)`.
 - To install packages from BioConductor, `RPkg.add("pkgname", :bioc)`
-  - For eg., I want to install `RGraphviz`, then `RPkg.add("RGraphviz", :bioc)`
+  - For eg., if you want to install `Rgraphviz`, then `RPkg.add("Rgraphviz", :bioc)`
+
+After installing a packaging, you can use the `@rlibrary` macro from `RCall` to load the package into your Julia session. ()
+E.g.
+```julia
+julia> @rlibrary Rgraphviz
+```
