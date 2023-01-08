@@ -1,7 +1,7 @@
 module RPkg
     using RCall
     R"""
-    options(repos=c(CRAN="https://cran.microsoft.com/"))
+    chooseCRANmirror(ind = 1)
     """
     #include("init.jl")
     __precompile__()
