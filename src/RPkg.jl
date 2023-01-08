@@ -1,7 +1,9 @@
 module RPkg
     using RCall
     R"""
-    chooseCRANmirror(ind = 1)
+    r <- getOption("repos")
+    r["CRAN"] <- "https://cloud.r-project.org/"
+    options(repos = r)
     """
     #include("init.jl")
     __precompile__()
