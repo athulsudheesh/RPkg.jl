@@ -1,7 +1,7 @@
 # RPkg.jl
 **An R Package Manager from Julia with ❤️**
 
-`RPkg.jl` is a meta package built on top of `RCall.jl`. Even though `RCall.jl` functions try as much as they can, to blur the lines between R syntax and Julia syntax in a Julia session, R package management is an area where the user is forced to write R scripts. Through `RPKg.jl` we are introducing Julia `Pkg` style syntax for managing your R-packages while using `RCall`. 
+`RPkg.jl` is a meta package built on top of `RCall.jl`. Even though `RCall.jl` functions try as much as they can, to blur the lines between R syntax and Julia syntax in a Julia session, R package management is an area where the user is forced to write R scripts. Through `RPKg.jl` we are introducing Julia `Pkg` style syntax for managing your R-packages while using `RCall`. `RPkg` also exposes all the functions from `RCall`, so you don't have to load it separetly. 
 
 ### APIs 
 
@@ -16,19 +16,18 @@
 | `RPkg.build()`       | re-Build package(s)                                               |
 | `RPkg.resolve()`     | Resolve dependency issues in the project enviornment              |
 
-**Note: `RPkg` supports installation via CRAN, Bioconductor, and GitHub**
+**Note: `RPkg` supports installation via CRAN and GitHub**
 - To install packages from CRAN, `RPkg.add("pkgname")`
   - If you want to install multiple packages, `RPkg.add("Pkg1", "Pkg2", "Pkg3")`
-- To install packages from GitHub URL, `RPkg.add("githubuserid/reponame", :github)`
-  - For rg., if you want to install the package from [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then `RPkg.add("ralmond/CPTtools", :github)`.
-- To install packages from BioConductor, `RPkg.add("pkgname", :bioc)`
-  - For eg., if you want to install `Rgraphviz`, then `RPkg.add("Rgraphviz", :bioc)`
+- To install packages from GitHub URL,you first need to install `devtools` using `RPkg`, then using the `RPkg.add("username/reponame")` syntax you can install the package from GitHub repo. 
+  - For rg., if you want to install the package from [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then after having the devtools insalled you can use `RPkg.add("ralmond/CPTtools")` to get `CPTtools` insalled.
 
-After installing a packaging, you can use the `@rlibrary` macro from `RCall` to load the package into your Julia session.
-E.g.
+
+### Example
 ```julia
-using RCall
-julia> @rlibrary Rgraphviz
+julia> using RPkg
+julia> RPkg.add("bnlearn")
+julia> @rlibrary bnlearn # @rlibrary is a macro from RCall
 ```
 
 ### Know issues:

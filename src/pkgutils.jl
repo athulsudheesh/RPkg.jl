@@ -27,24 +27,17 @@ function add(pkgs...)
     end
 end
 
-function add(pkg, remote::Symbol)
-    if remote == :github
-        R"""
-        devtools::install_github($pkg)
-        """
-    elseif remote == :bioc
-        R"""
-        BiocManager::install($pkg)
-        """
-    else
-        @error "Invalid host keyword"
-    end
-end
+
 # ======================== Utilities for removing packages ============================
 function rm(pkgname)
-    R"""
-    renv::remove($pkgname);
-    """
+    if ispath("renv.lock")
+        R"""
+        renv::remove($pkgname);
+        """
+    else
+        R"""
+        remove.packages($pkgname)
+        """
     println("R package '$pkgname' deleted")
 end
 

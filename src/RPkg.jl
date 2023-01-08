@@ -1,5 +1,6 @@
 module RPkg
-    using RCall
+    using Reexport 
+    @reexport using RCall
     R"""
     r <- getOption("repos")
     r["CRAN"] <- "https://cloud.r-project.org/"
