@@ -4,7 +4,7 @@ function add(pkgname)
     if ispath("renv.lock")
         path = pwd()
         R"""
-        renv::install($pkgname, project = $path);
+        renv::install($pkgname, project = $path, repos=r);
         renv::record($pkgname, project=$path);
         """
         println("R package '$pkgname' added")

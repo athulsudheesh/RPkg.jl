@@ -1,19 +1,19 @@
 R"""
-install.packages("renv", repos="https://cran.microsoft.com/")
+install.packages("renv", repos=r)
 """
 @info "RPkg: 'renv' installed"
 
 R"""
-install.packages("languageserver", repos="https://cran.microsoft.com/")
+install.packages("languageserver", repos=r)
 """
 @info "RPkg: 'r-languageserver' installed"
 R"""
-install.packages("devtools", repos="https://cran.microsoft.com/")
+install.packages("devtools", repos=r)
 """
 @info "RPkg: 'devtools' installed"
 
 R"""
 if (!require("BiocManager", quietly = TRUE))
-       install.packages("BiocManager", repos="https://cran.microsoft.com/")
+       install.packages("BiocManager", repos=r)
 """
 @info "RPkg: 'BiocManager' installed"
