@@ -1,19 +1,27 @@
 R"""
-install.packages("renv", repos=r)
+options(repos = r)
+install.packages("renv")
 """
 @info "RPkg: 'renv' installed"
 
+
+
 R"""
-install.packages("languageserver", repos=r)
+options(repos = r)
+install.packages("languageserver")
 """
 @info "RPkg: 'r-languageserver' installed"
+
+
 R"""
-install.packages("devtools", repos=r)
+options(repos = r)
+install.packages("devtools")
 """
 @info "RPkg: 'devtools' installed"
 
 R"""
+options(repos = r)
 if (!require("BiocManager", quietly = TRUE))
-       install.packages("BiocManager", repos=r)
+       install.packages("BiocManager")
 """
 @info "RPkg: 'BiocManager' installed"
