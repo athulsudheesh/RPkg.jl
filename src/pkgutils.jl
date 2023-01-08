@@ -4,6 +4,8 @@ function add(pkgname)
     if ispath("renv.lock")
         path = pwd()
         R"""
+        r <- getOption("repos")
+        r["CRAN"] <- "https://cloud.r-project.org/"
         options(repos = r)
         renv::install($pkgname, project = $path);
         renv::record($pkgname, project=$path);
@@ -11,6 +13,8 @@ function add(pkgname)
         println("R package '$pkgname' added")
     else
         R"""
+        r <- getOption("repos")
+        r["CRAN"] <- "https://cloud.r-project.org/"
         options(repos = r)
         install.packages($pkgname);
         """

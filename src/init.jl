@@ -1,4 +1,6 @@
 R"""
+r <- getOption("repos")
+r["CRAN"] <- "https://cloud.r-project.org/"
 options(repos = r)
 install.packages("renv")
 """
@@ -7,6 +9,8 @@ install.packages("renv")
 
 
 R"""
+r <- getOption("repos")
+r["CRAN"] <- "https://cloud.r-project.org/"
 options(repos = r)
 install.packages("languageserver")
 """
@@ -14,12 +18,16 @@ install.packages("languageserver")
 
 
 R"""
+r <- getOption("repos")
+r["CRAN"] <- "https://cloud.r-project.org/"
 options(repos = r)
 install.packages("devtools")
 """
 @info "RPkg: 'devtools' installed"
 
 R"""
+r <- getOption("repos")
+r["CRAN"] <- "https://cloud.r-project.org/"
 options(repos = r)
 if (!require("BiocManager", quietly = TRUE))
        install.packages("BiocManager")
