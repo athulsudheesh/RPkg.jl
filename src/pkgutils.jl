@@ -38,6 +38,7 @@ function rm(pkgname)
         R"""
         remove.packages($pkgname)
         """
+    end
     println("R package '$pkgname' deleted")
 end
 
