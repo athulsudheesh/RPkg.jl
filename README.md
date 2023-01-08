@@ -19,7 +19,7 @@
 **Note: `RPkg` supports installation via CRAN and GitHub**
 - To install packages from CRAN, `RPkg.add("pkgname")`
   - If you want to install multiple packages, `RPkg.add("Pkg1", "Pkg2", "Pkg3")`
-- To install packages from GitHub URL,you first need to install `devtools` using `RPkg`, then using the `RPkg.add("username/reponame")` syntax you can install the package from GitHub repo. 
+- To install packages from GitHub URL, you first need to install `devtools` using `RPkg`, then using the `RPkg.add("username/reponame")` syntax you can install the package from GitHub repo. 
   - For rg., if you want to install the package from [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then after having the devtools insalled you can use `RPkg.add("ralmond/CPTtools")` to get `CPTtools` insalled.
 
 
@@ -31,4 +31,5 @@ julia> @rlibrary bnlearn # @rlibrary is a macro from RCall
 ```
 
 ### Know issues:
-- `RPkg.status()` is flaky 
+- In Windows machines, `RPkg` only works inside a local project environment. So before attempting to install any packages using `RPkg`, you need to create a local project enviornmnet using `RPkg.instanitate()`. 
+- `RPkg.status()` is broken  
