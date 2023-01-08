@@ -19,8 +19,9 @@
 **Note: `RPkg` supports installation via CRAN and GitHub**
 - To install packages from CRAN, `RPkg.add("pkgname")`
   - If you want to install multiple packages, `RPkg.add("Pkg1", "Pkg2", "Pkg3")`
-- To install packages from GitHub URL, you first need to install `devtools` using `RPkg`, then using the `RPkg.add("username/reponame")` syntax you can install the package from GitHub repo. 
-  - For rg., if you want to install the package from [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then after having the devtools insalled you can use `RPkg.add("ralmond/CPTtools")` to get `CPTtools` insalled.
+- The option to install packages from GitHub only works in local r-project enviornments. So first run `RPkg.instantiate()` before proceeding to the following steps:
+  - To install packages from GitHub URL, you first need to install `devtools` using `RPkg`, then using the `RPkg.add("username/reponame")` syntax you can install the package from GitHub repo. 
+    - For eg., if you want to install the package from [https://github.com/ralmond/CPTtools](https://github.com/ralmond/CPTtools), then after having the devtools insalled you can use `RPkg.add("ralmond/CPTtools")`.
 
 
 ### Example
