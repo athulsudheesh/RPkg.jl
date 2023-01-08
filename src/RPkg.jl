@@ -5,7 +5,7 @@ module RPkg
     r["CRAN"] <- "https://cloud.r-project.org/"
     options(repos = r)
     """
-    include("init.jl")
+    #include("init.jl")
     __precompile__()
     include("pkgutils.jl")
 end
