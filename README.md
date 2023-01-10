@@ -1,7 +1,7 @@
 # RPkg.jl
 **An R Package Manager from Julia with ❤️**
 
-`RPkg.jl` is a meta package built on top of `RCall.jl`. Even though `RCall.jl` functions try as much as they can, to blur the lines between R syntax and Julia syntax in a Julia session, R package management is an area where the user is forced to write R scripts. Through `RPKg.jl` we are introducing Julia `Pkg` style syntax for managing your R-packages while using `RCall`. `RPkg` also exposes all the functions from `RCall`, so you don't have to load it separetly. 
+`RPkg.jl` is a meta package built on top of `RCall.jl`. Even though `RCall.jl` functions try as much as they can, to blur the lines between R syntax and Julia syntax in a Julia session, R package management is an area where the user is forced to write R scripts. Through `RPKg.jl` we are introducing Julia `Pkg` style syntax for managing your R-packages while using `RCall`. `RPkg` also exposes all the functions from `RCall`, so you don't have to load it separately. 
 
 ### APIs 
 
